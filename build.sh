@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/simple-app
+cd /tmp/simple-app
 docker build -t simple-web-app .
 ECR_REPO=$(aws ecr describe-repositories --region us-east-1 --repository-names survey-app-repo --query 'repositories[*].repositoryUri' --output text | cut -d'/' -f1)
 ECR_PATH=$(aws ecr describe-repositories --region us-east-1 --repository-names survey-app-repo --query 'repositories[*].[repositoryUri]' --output text)
