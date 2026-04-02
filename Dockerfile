@@ -12,6 +12,6 @@ RUN chgrp -R 0 /app && chmod -R g=u /app
 
 EXPOSE 8080
 
-ENV FLASK_APP=app.py
+ENV FLASK_APP=app:app
 
 CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
