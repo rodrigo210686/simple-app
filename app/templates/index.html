@@ -7,9 +7,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>🚀 Minha aplicação no OpenShift</h1>
-        <p>Aplicação rodando com Flask + Docker + OpenShift</p>
-        <button onclick="alert('Funcionando! 🎉')">Testar</button>
+        <h1>🚀 App rodando no OpenShift</h1>
+        <p>Flask + Docker + OpenShift + Gunicorn</p>
+        <button onclick="mostrarMensagem()">Testar</button>
     </div>
+
+    <script>
+        function mostrarMensagem() {
+            alert("Funcionando perfeitamente 🎉");
+        }
+    </script>
 </body>
 </html>
