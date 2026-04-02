@@ -1,21 +1,17 @@
-# Use an official Python runtime as the base image
 FROM python
 
-# Set the working directory in the container
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install any needed dependencies specified in requirements.txt
 COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Make port 80 available to the world outside this container
-EXPOSE 80
+# Ajuste de permissões para OpenShift
+RUN chgrp -R 0 /app && chmod -R g=u /app
 
-# Define environment variable
+EXPOSE 8080
+
 ENV FLASK_APP=app.py
 
-# Run app.py when the container launches
 CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]
